@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-//var trumpController = require('../controllers/trump');
+//var userController = require('../controllers/user.controller.js');
 
-// router.route('/tump')
-//   .get(trumpController.getAll)
-//   .post(trumpController.createDuck);
+// router.route('/user')
+//   .get(userController.getAll)
+//   .post(userController.createUser);
 //
-// router.route('/trump/:id')
-//   .get(trumpController.getDuck)
-//   .patch(trumpController.updateDuck)
-//   .delete(trumpController.removeDuck);
+// router.route('/user/:id')
+//   .get(userController.getUser)
+//   .patch(userController.updateUser)
+//   .delete(userController.removeUser);
 
 module.exports = router;
