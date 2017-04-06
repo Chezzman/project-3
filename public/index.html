@@ -6,27 +6,34 @@
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
 
- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+ <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script> -->
 
-  <!-- <script src="/angular/angular.min.js" charset="utf-8"></script>
-  <script src="/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script> -->
-  <!-- <script src="/firebase/externs/firebase-app-externs.js" charset="utf-8"></script>
-  <script src="/firebase/externs/firebase-auth-externs.js" charset="utf-8"></script>
-  <script src="/angularfire/dist/angularfire.min.js" charset="utf-8"></script> -->
+  <script src="/angular/angular.min.js" ></script>
+  <script src="/angular-ui-router/release/angular-ui-router.min.js" ></script>
+  <script src="/firebase/firebase.js" ></script>
+  <script src="/angularfire/dist/angularfire.min.js" ></script>
 
-  <script src="//www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-  <script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <!-- <script src="//www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+  <script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> -->
+  <!-- <script src="/angular-google-maps/dist/angular-google-maps.js" ></script> -->
+
+
 
   <script src="/js/app.js"></script>
   <script src="/js/factories/auth.factory.js"></script>
+  <script src="/js/factories/tweet.factory.js"></script>
+  <script src="/js/factories/g-maps.factory.js"></script>
   <script src="/js/controllers/auth.controller.js"></script>
-  <script src="/js/controllers/user-only.controller.js"></script>
+  <script src="/js/controllers/tweet.controller.js"></script>
+  <script src="/js/controllers/g-maps.controller.js"></script>
 
 
   <title>Project 3</title>
 
   <link rel="icon" href="/images/trump.ico" type="image/x-icon" />
+
+
 
 </head>
   <body ng-controller="AuthController as auth">
@@ -37,17 +44,15 @@
         <p><strong>
         	Welcome {{ auth.user.email }}!, remember to keep our secrets a secret!
         </strong></p>
-        <p>
+        <nav>
           <a href="#" ng-click="auth.signOut()">Sign Out</a>
-        </p>
+          <a href="#" ui-sref="tweet">Where Tweet</a>
+        </nav>
       </div>
 
       <div ng-if="!auth.user">
         <p>Welcome new person!!</p>
 
-        <a ui-sref="login">Click Here</a> to sign in.
-        <br>
-        <a ui-sref="signup">Click Here</a> to register and see our secrets!
       </div>
 
     </section>
@@ -56,6 +61,24 @@
     <section ui-view>
 
     </section>
+
+    <div ng-if="!auth.user"><h4>Whats this for?</h4></div>
+    <div ng-if="auth.user"><h4>Google maps of tweet</h4></div>
+
+    <div id="map" ></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 51.5074, lng: 0.1278},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE&callback=initMap"
+    async defer></script>
+
+
 
   </body>
 </html>

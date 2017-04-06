@@ -6,6 +6,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/sg-webdev4-project3';
 
+
 mongoose.connect(MONGODB_URI, function (err) {
   if (err) {
     console.error('Could not connect to Mongo: err:', err);
@@ -24,6 +25,7 @@ app.use(express.static('node_modules'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(router);
+
 
 app.listen(PORT, function() {
   console.log('App is running on port', PORT);

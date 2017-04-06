@@ -39,4 +39,5 @@ function AuthCatcher($rootScope, $state) {
 angular
   .module('WhereTweet', ['ui.router', 'firebase'])
   .config(MainRouter)
+  .constant('API_URL', 'http://localhost:3000')
   .run(AuthCatcher);
