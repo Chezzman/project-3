@@ -3,9 +3,15 @@ function TweetFactory($http){
     getAll: function () {
       return $http({
         method: 'GET',
-        url: `/api/tweets/search/`
+        url: `/api/tweets`
       });
     }
+    // searchTwitter: function () {
+    //   return $http({
+    //     method: 'GET',
+    //     url: `/api/tweets/search`
+    //   });
+    // }
     // getOne: function (tweetId){
     //   return $http({
     //     method: 'GET',
@@ -41,4 +47,4 @@ function TweetFactory($http){
 
 angular
   .module('WhereTweet')
-  .factory('TweetFactory', ['$http',TweetFactory]);
+  .factory('TweetFactory', TweetFactory);

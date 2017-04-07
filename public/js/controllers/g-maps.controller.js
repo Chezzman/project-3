@@ -21,6 +21,8 @@ function MapsController(){
     };
   };
 
+  
+
 //user $stateParams to get the geo coords from the twitter post to the marker....
   console.log('MapsController() here: ', controller);
 }

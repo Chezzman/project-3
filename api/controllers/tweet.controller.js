@@ -11,25 +11,45 @@ var client = new Twitter({
 });
 
 function showAllTweets(req, res){
-  console.log('Client specs: ',client);
+//   client.stream('statuses/filter.json?track=twitter', {track: 'twitter'},  function(stream) {
+//     stream.on('data', function(tweet) {
+//       console.log(tweet.text);
+//       res.status(200).json({message: 'Stream recieved'});
+//     });
+//
+//     stream.on('error', function(error) {
+//       res.status(500).json({message: 'stream not found'});
+//       console.log(error);
+//     });
+//   });
 
 
-  client.get('CharlesSpartan',  function(error, tweets, response) {
+  client.get('search/tweets.json?q=%40twitterapi', function(error, tweets, response) {
     if(error){
       console.log('error', error);
       res.status(500).json({ message: 'Could not get tweets' });
     }
-    tweets = JSON.parse(tweets);
-    res.json(tweets);
-    console.log(tweets);  // Tweet body.
-    console.log(response);  // Raw response object.
-  });
-  //    // JSON.parse convertsstring into JSON
-  //   searchResultsJson = JSON.parse(body);
-  //   res.json(searchResultsJson);
-  // });
-}
 
+    res.status(200).json(tweets);
+    //res.json(tweets);
+    console.log('TWEETTSSSSSS EERRRRRRORORRRORORROROORRORROORR',tweets);  // Tweet body.
+    console.log('REEEEPPPOONSSEEE PARRRRTTTT!!!!',response);  // Raw response object.
+    //res.json(tweets);
+  });
+     // JSON.parse convertsstring into JSON
+    // searchResultsJson = JSON.parse(body);
+    // res.json(searchResultsJson);
+  // });
+//}
+// function getSearchParams(req, res){
+//   client.get('search/tweets.json?q=&geocode=-22.912214,-43.230182,1km&lang=pt&result_type=recent', function(error, tweets, response){
+//     if(error){
+//       res.status(500).json({ message: 'Could not get geo tweet'});
+//     }
+//     console.log(tweets);  // Tweet body.
+//     console.log(response);  // Raw response object.
+//   });
+}
 
 // function getAll(req, res) {
 //   client.get('statuses/user_timeline', { screen_name: 'nodejs', count: 20 }, function(error, tweets, response) {
@@ -57,6 +77,5 @@ function showAllTweets(req, res){
 
 
 module.exports = {
-  //index: getAll,
-  search: showAllTweets
+  getTweets: showAllTweets
 };
