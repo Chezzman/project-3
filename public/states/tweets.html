@@ -1,6 +1,14 @@
 <h2>All the tweets</h2>
 
-<!-- 
+
+<form ng-controller="TweetController as tweets">
+  <input type="text" >
+  <p>{{tweets.allTweets}}</p>
+  <p></p>
+
+</form>
+
+<!--
 <section ng-controller="TwitterCtrl">
   <form action=""><input type="text" ng-model="searchTerm" value="SearchTweet">
   <button class="btn"><i class="icon-search"></i>Search</button></form>

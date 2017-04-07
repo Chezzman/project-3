@@ -11,18 +11,8 @@ var client = new Twitter({
 });
 
 function showAllTweets(req, res){
-//   client.stream('statuses/filter.json?track=twitter', {track: 'twitter'},  function(stream) {
-//     stream.on('data', function(tweet) {
-//       console.log(tweet.text);
-//       res.status(200).json({message: 'Stream recieved'});
-//     });
-//
-//     stream.on('error', function(error) {
-//       res.status(500).json({message: 'stream not found'});
-//       console.log(error);
-//     });
-//   });
 
+  console.log('something something dark side');
 
   client.get('search/tweets.json?q=%40twitterapi', function(error, tweets, response) {
     if(error){
@@ -30,7 +20,7 @@ function showAllTweets(req, res){
       res.status(500).json({ message: 'Could not get tweets' });
     }
 
-    res.status(200).json(tweets);
+    res.status(200).json({ message: 'the tewta coming though' });
     //res.json(tweets);
     console.log('TWEETTSSSSSS EERRRRRRORORRRORORROROORRORROORR',tweets);  // Tweet body.
     console.log('REEEEPPPOONSSEEE PARRRRTTTT!!!!',response);  // Raw response object.
