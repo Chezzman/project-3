@@ -14,15 +14,14 @@ function showAllTweets(req, res){
 
   console.log('something something dark side');
 
-  client.get('search/tweets.json?q=%40twitterapi', function(error, tweets, response) {
+  client.get('search/tweets.json?q=donald%20trump&src=typd', {q: 'angularjs'},function(error, tweets, response) {
     if(error){
       console.log('error', error);
       res.status(500).json({ message: 'Could not get tweets' });
     }
 
-    res.status(200).json({ message: 'the tewta coming though' });
-    //res.json(tweets);
-    console.log('TWEETTSSSSSS EERRRRRRORORRRORORROROORRORROORR',tweets);  // Tweet body.
+    //res.status(200).json({ message: 'the tewta coming though' });
+    res.json(tweets); // Tweet body.
     console.log('REEEEPPPOONSSEEE PARRRRTTTT!!!!',response);  // Raw response object.
     //res.json(tweets);
   });
