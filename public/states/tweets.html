@@ -21,16 +21,17 @@
         <p>{{ tweet.user.name }}</p>
         <p>{{ tweet.text }}</p>
         <p>{{ tweet.created_at }}</p>
-        <p>{{ tweet.coordinates }}</p>
-        <p>{{ tweet.place }}</p>
-        <p>{{ tweet.user.locations }}</p>
+
+        <input type="hidden" name="gps" value="{{ tweet.coordinates }}">
+        <input type="hidden" name="place" value="{{ tweet.place }}">
+        <input type="hidden" name="locations" value="{{ tweet.user.locations }}">
 
       </li>
     </ul>
   </div>
 </form>
 
-<!-- 
+<!--
 <h2>MAPS</h2>
 <div ng-controller="MapsController as maps" ng-init="maps.setMapMarkerLocation()">
   <ui-gmap-google-map center="maps.map.center" zoom="maps.map.zoom">
