@@ -35,24 +35,28 @@
       <section class="userWidget headerElement">
 
         <div ng-if="auth.user">
-          <div class="panel panel-default">
+          <div class="panel panel-default welcome-banner">
             <div class="panel-body">
               <p>Welcome back {{ auth.user.email }}, happy searching!  </p>
             </div>
           </div>
-          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified" role="toolbar">
-            <li>  <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a></li>
-            <li><a href="#" ui-sref="tweet" role="group">Where Tweet</a></li>
+          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified top-padding" role="toolbar">
+            <li>
+               <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
+             </li>
+            <li>
+              <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
+            </li>
           </nav>
         </div>
 
         <div ng-if="!auth.user">
-          <div class="panel panel-default">
+          <div class="panel panel-default welcome-banner">
             <div class="panel-body">
               <p>Welcome to WhereTweet,  search twitter and find out locations!</p>
             </div>
           </div>
-          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified">
+          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified top-padding">
             <li>
               <a href="#" ui-sref="login" >Log in</a>
             </li>

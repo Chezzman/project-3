@@ -11,7 +11,6 @@ body {
 .page_wrapper{
   width:80%;
   min-height: 80% auto;
-  border: 3px solid purple;
   padding:2%;
   margin:auto;
 }
@@ -23,11 +22,14 @@ button{
   background-color: white;
   padding:5%;
   margin: 2%;
-  box-shadow: 0px 0px 21px 0px rgba(44,44,184,1);
+  box-shadow: 0px 0px 21px 0px rgba(44, 44, 184, 0.65);
   border-radius: 5px;
   border-bottom: 2px solid red;
   list-style-type:  none;
 
+}
+.tweets:hover{
+    box-shadow: 0px 0px 21px 0px rgba(44,44,184,1);
 }
 
 .twitter_logo{
@@ -45,7 +47,15 @@ strong{
 .top-margin{
   margin-top: 30px;
 }
+.top-padding{
+  padding-top: 15px
+}
 
 .inline-block{
   display: inline-block;
+}
+
+.welcome-banner{
+  position: fixed;
+  top: 0;
 }
