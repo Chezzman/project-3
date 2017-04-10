@@ -2,8 +2,11 @@
 <html lang="en" ng-app="WhereTweet">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+  <script src="/jquery/dist/jquery.min.js" ></script>
+  <link rel="stylesheet" href="/bootstrap/dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="/css/main.css">
 
   <script src="/angular/angular.min.js" ></script>
@@ -35,7 +38,7 @@
           <p><strong>
             Welcome back {{ auth.user.email }}!, search twitter and find out locations!
           </strong></p>
-          <nav class="row col-md-6 btn-toolbar" role="toolbar">
+          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified" role="toolbar">
             <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
             <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
           </nav>
@@ -43,14 +46,18 @@
 
         <div ng-if="!auth.user">
           <p>Welcome new person!!</p>
-          <nav class="row col-md-6 btn-toolbar" role="toolbar">
-            <a href="#" ui-sref="login" role="group">Log in</a>
-            <a href="#" ui-sref="signup" role="group">Sign up</a>
+          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified" role="toolbar" >
+            <li>
+              <a href="#" ui-sref="login" role="group">Log in</a>
+            </li>
+            <li>
+              <a href="#" ui-sref="signup" role="group">Sign up</a>
+            </li>
           </nav>
         </div>
 
       </section>
-    <div class="">
+    <div class="col-sm-12 row">
       <h1 class="banner col-md-12">WhereTweets</h1>
       <div class="twitter_logo"></div>
     </div>
@@ -58,6 +65,19 @@
     <section ui-view>
 
     </section>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+    //BS Popover promt_________________________
+      $(function () {
+        $('[data-toggle="popover"]').popover();
+      });
+
+    });
+
+    </script>
+
 
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE&sensor=false"></script> -->
 

@@ -25,6 +25,7 @@
     "coffee-script": "^1.12.4",
     "express": "^4.15.2",
     "firebase": "^3.7.4",
+    "jquery": "^3.2.1",
     "mongoose": "^4.9.1",
     "twitter": "^1.7.0"
   },
