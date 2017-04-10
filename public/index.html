@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
   <script src="/jquery/dist/jquery.min.js" ></script>
-  <link rel="stylesheet" href="/bootstrap/dist/js/bootstrap.min.js">
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
 
   <script src="/angular/angular.min.js" ></script>
@@ -46,12 +46,12 @@
 
         <div ng-if="!auth.user">
           <p>Welcome new person!!</p>
-          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified" role="toolbar" >
+          <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified">
             <li>
-              <a href="#" ui-sref="login" role="group">Log in</a>
+              <a href="#" ui-sref="login" >Log in</a>
             </li>
             <li>
-              <a href="#" ui-sref="signup" role="group">Sign up</a>
+              <a href="#" ui-sref="signup" >Sign up</a>
             </li>
           </nav>
         </div>
