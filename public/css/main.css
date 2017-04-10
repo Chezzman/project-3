@@ -17,11 +17,14 @@ body {
   margin:auto;
 }
 
+button{
+  
+}
 .tweets{
   background-color: white;
   padding:5%;
   margin: 2%;
-  box-shadow: 8px 8px 8px;
+  box-shadow: 0px 0px 21px 0px rgba(44,44,184,1);
   border-radius: 5px;
   border-bottom: 2px solid red;
   list-style-type:  none;
@@ -33,6 +36,7 @@ body {
   width:50px;
   background: url(/images/Twitter-icon.png) center no-repeat ;
   background-size: contain;
+  float: right;
 }
 
 strong{
@@ -41,4 +45,8 @@ strong{
 
 .top-margin{
   margin-top: 30px;
+}
+
+.inline-block{
+  display: inline-block;
 }
