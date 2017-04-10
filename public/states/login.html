@@ -1,15 +1,17 @@
 <h2>Sign In</h2>
 
 <section class="" ng-if="!auth.user">
-  <div>
-    Email: <input type="text" ng-model="auth.email">
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" >Email:</span>
+    <input type="text" ng-model="auth.email"  aria-describedby="sizing-addon1" class="form-control">
   </div>
 
-  <div>
-    Password: <input type="password" ng-model="auth.password">
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" >Password:</span>
+    <input type="password" ng-model="auth.password" aria-describedby="sizing-addon1" class="form-control">
   </div>
 
-  <button ng-click="auth.signIn()">Sign In</button>
+  <button type="button" ng-click="auth.signIn()" class="btn btn-default">Sign In</button>
 
   <p ng-if="auth.error">
     Error: <strong>{{ auth.error }}</strong>

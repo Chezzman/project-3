@@ -1,7 +1,8 @@
 var Twitter = require('twitter');
 // var Tweet = require('../models/tweet.model.js');
 
-
+//Docs of using twitter npm
+//https://github.com/desmondmorris/node-twitter/tree/master/examples
 
 var client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -10,58 +11,61 @@ var client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
+
+//how to perform Twitter API search in Node.js with user-entered keyword
+//http://stackoverflow.com/questions/34343660/how-to-perform-twitter-api-search-in-node-js-with-user-entered-keyword
+
+
+//SEARCH FOR PERSON OR HASH TAG
+//https://dev.twitter.com/rest/public/search
+//https://dev.twitter.com/rest/reference/get/search/tweets
 function showAllTweets(req, res){
-
-  console.log('something something dark side');
-
-  client.get('search/tweets.json?q=donald%20trump&src=typd', {q: 'angularjs'},function(error, tweets, response) {
+  var params = {
+    q: req.body.query,
+    count: 10,
+    //geocode: true
+  };
+  client.get('search/tweets', params, function(error, tweets, response) {
     if(error){
       console.log('error', error);
       res.status(500).json({ message: 'Could not get tweets' });
     }
 
-    //res.status(200).json({ message: 'the tewta coming though' });
-    res.json(tweets); // Tweet body.
-    console.log('REEEEPPPOONSSEEE PARRRRTTTT!!!!',response);  // Raw response object.
-    //res.json(tweets);
+    //GET TWEETS SPECIFIC DATA
+    res.json(tweets);
+
+    //SEND GEO DATA TO GOOGLE MAPS
+
   });
-     // JSON.parse convertsstring into JSON
-    // searchResultsJson = JSON.parse(body);
-    // res.json(searchResultsJson);
-  // });
-//}
-// function getSearchParams(req, res){
-//   client.get('search/tweets.json?q=&geocode=-22.912214,-43.230182,1km&lang=pt&result_type=recent', function(error, tweets, response){
-//     if(error){
-//       res.status(500).json({ message: 'Could not get geo tweet'});
-//     }
-//     console.log(tweets);  // Tweet body.
-//     console.log(response);  // Raw response object.
-//   });
 }
 
-// function getAll(req, res) {
-//   client.get('statuses/user_timeline', { screen_name: 'nodejs', count: 20 }, function(error, tweets, response) {
-//     if (!error) {
+//REPSONDE WITH USERS RECENT TWEETS WITH GEO COORDS
+//     //https://dev.twitter.com/rest/reference/get/users/lookup
+//     var object = {
+//       user_id: tweets.name,
+//         location: tweets.places.location,
+//         //geo discretion
+//         //https://dev.twitter.com/overview/terms/geo-developer-guidelines
+//       geoPosition: tweets.places.coordinates,
+//       //getting coords http://stackoverflow.com/questions/36440321/twitter-api-tweet-location
 //
-//       console.log('tweets: ', tweets);
-//       console.log('response: ', response);
-//       res.status(200).render('/', { title: 'Express', tweets: tweets });
-//
-//     }    else {
-//       console.log('error: ', error);
-//       res.status(500).json({ error: error });
+//       //further information needed for twittersearchresults
+//       //https://dev.twitter.com/overview/api/tweets
+//       tweet: tweets.text,
+//       id_str: tweets.id_str
 //     }
-//   });
-// }
-
-
-  // Tweet.find(function(error, data) {
-  //   if (error) return response.json({message: 'Could not find any criminal'});
-  //   response.json(data);
-  //   console.log('something:', data, error);
-  // });
-  // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+//     client.get('statuses/update', params, function(error, tweets, response) {
+//         if(error){
+//           console.log('error', error);
+//           res.status(500).json({ message: 'Could not get tweets' });
+//         }
+//
+//
+// //only push through the object information from json to angular.
+// //https://dev.twitter.com/rest/reference/get/geo/search
+//         json.parse.object = JSON(tweets)
+//
+//     //
 
 
 

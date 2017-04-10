@@ -10,6 +10,7 @@
   <script src="/angular-ui-router/release/angular-ui-router.min.js" ></script>
   <script src="/firebase/firebase.js" ></script>
   <script src="/angularfire/dist/angularfire.min.js" ></script>
+  <!-- <script src="/angular-google-maps/dist/angular-google-maps.min.js"></script> -->
 
   <script src="/js/app.js"></script>
   <script src="/js/factories/auth.factory.js"></script>
@@ -28,22 +29,25 @@
 
 </head>
   <body ng-controller="AuthController as auth">
-    <h1>Baller app incoming</h1>
+    <h1 class="banner col-md-12">WhereTweets</h1>
     <section class="userWidget headerElement">
 
       <div ng-if="auth.user">
         <p><strong>
-        	Welcome {{ auth.user.email }}!, remember to keep our secrets a secret!
+        	Welcome back {{ auth.user.email }}!, search twitter and find out locations!
         </strong></p>
-        <nav>
-          <a href="#" ng-click="auth.signOut()">Sign Out</a>
-          <a href="#" ui-sref="tweet">Where Tweet</a>
+        <nav class="row col-md-6 btn-toolbar" role="toolbar">
+          <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
+          <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
         </nav>
       </div>
 
       <div ng-if="!auth.user">
         <p>Welcome new person!!</p>
-
+        <nav class="row col-md-6 btn-toolbar" role="toolbar">
+          <a href="#" ui-sref="login" role="group">Log in</a>
+          <a href="#" ui-sref="signup" role="group">Sign up</a>
+        </nav>
       </div>
 
     </section>
@@ -53,23 +57,8 @@
 
     </section>
 
-    <div ng-if="!auth.user"><h4>Whats this for?</h4></div>
-    <div ng-if="auth.user"><h4>Google maps of tweet</h4></div>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE&sensor=false"></script> -->
 
-    <div id="map" ></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 51.5074, lng: 0.1278},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE&callback=initMap"
-    async defer></script>
-
-
-
+  
   </body>
 </html>

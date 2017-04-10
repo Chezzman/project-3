@@ -41,3 +41,5 @@ angular
   .config(MainRouter)
   .constant('API_URL', 'http://localhost:3000')
   .run(AuthCatcher);
+
+//'uiGmapgoogle-maps'

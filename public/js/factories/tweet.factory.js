@@ -1,9 +1,12 @@
 function TweetFactory($http){
   return{
-    getAll: function () {
+    searchTweets: function (query) {
       return $http({
-        method: 'GET',
-        url: `/api/tweets`
+        method: 'POST',
+        url: '/api/twittersearchresults',
+        data: {
+          query: query
+        }
       });
     }
     // searchTwitter: function () {

@@ -3,7 +3,7 @@ var router = express.Router();
 
 var tweetController = require('../controllers/tweet.controller');
 
-router.get('/api/tweets', tweetController.getTweets);
+router.post('/api/twittersearchresults', tweetController.getTweets);
 //   .post(userController.createUser);
 //
 // router.route('/user/:id')
