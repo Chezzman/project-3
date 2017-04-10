@@ -28,28 +28,30 @@
 </head>
   <body ng-controller="AuthController as auth">
     <div class="page_wrapper">
-    <h1 class="banner col-md-12">WhereTweets</h1>
-    <section class="userWidget headerElement">
 
-      <div ng-if="auth.user">
-        <p><strong>
-        	Welcome back {{ auth.user.email }}!, search twitter and find out locations!
-        </strong></p>
-        <nav class="row col-md-6 btn-toolbar" role="toolbar">
-          <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
-          <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
-        </nav>
-      </div>
+      <section class="userWidget headerElement">
 
-      <div ng-if="!auth.user">
-        <p>Welcome new person!!</p>
-        <nav class="row col-md-6 btn-toolbar" role="toolbar">
-          <a href="#" ui-sref="login" role="group">Log in</a>
-          <a href="#" ui-sref="signup" role="group">Sign up</a>
-        </nav>
-      </div>
+        <div ng-if="auth.user">
+          <p><strong>
+            Welcome back {{ auth.user.email }}!, search twitter and find out locations!
+          </strong></p>
+          <nav class="row col-md-6 btn-toolbar" role="toolbar">
+            <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
+            <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
+          </nav>
+        </div>
 
-    </section>
+        <div ng-if="!auth.user">
+          <p>Welcome new person!!</p>
+          <nav class="row col-md-6 btn-toolbar" role="toolbar">
+            <a href="#" ui-sref="login" role="group">Log in</a>
+            <a href="#" ui-sref="signup" role="group">Sign up</a>
+          </nav>
+        </div>
+
+      </section>
+
+    <h1 class="banner col-md-12">WhereTweets</h1><img src="/images/Twitter-icon.png" alt="twitter logo">
 
 
     <section ui-view>

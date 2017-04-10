@@ -13,12 +13,14 @@
    </div>
 
 
-   <div class="col-md-12">
+   <div class="col-sm-12">
     <!--  tweet in tweetsAll display one tweet -->
     <ul class="row">
-      <li class="col-md-4" ng-repeat="tweet in tweets.allTweets.statuses">
-        <img src="{{ tweet.user.profile_image_url }}" alt="Profile pic">
-        <p>{{ tweet.user.name }}</p>
+      <li class="col-sm-5" ng-repeat="tweet in tweets.allTweets.statuses">
+        <div>
+          <img src="{{ tweet.user.profile_image_url }}" alt="Profile pic">
+          <p>{{ tweet.user.name }}</p>
+        </div>
         <p>{{ tweet.text }}</p>
         <p>{{ tweet.created_at }}</p>
 
