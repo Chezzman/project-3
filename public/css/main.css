@@ -1,12 +1,17 @@
 body {
-  width:80vw;
-  min-height: 80vh;
+  width:100vw;
+  height: 100vh;
   display: inline-flex;
   border: 1px solid purple;
+  justify-content: center;
+   align-content: center;
+
 }
 
 .page_wrapper{
-  justify-content: center;
+  width:80%;
+  min-height: 80%;
+  border: 1px solid purple;
 
 
 }
