@@ -1,12 +1,12 @@
 <h2>SignUp</h2>
 
-<section class="" ng-if="!auth.user">
+<section class="container-fluid col-sm-12" ng-if="!auth.user">
 
-  <div>
+  <div class="input-group input-group-lg col-sm-6">
     Email: <input type="text" ng-model="auth.email">
   </div>
 
-  <div>
+  <div class="input-group input-group-lg col-sm-6">
     Password: <input type="password" ng-model="auth.password">
   </div>
 
@@ -23,3 +23,22 @@
 <section ng-if="auth.user">
   <p>Don't be silly. You are already logged in...</p>
 </section>
+
+
+<!-- <section class="container-fluid col-sm-12" ng-if="!auth.user">
+  <div class="input-group input-group-lg col-sm-6">
+    <span class="input-group-addon" >Email:</span>
+    <input type="text" ng-model="auth.email"  aria-describedby="sizing-addon1" class="form-control">
+  </div>
+
+  <div class="input-group input-group-lg col-sm=6">
+    <span class="input-group-addon" >Password:</span>
+    <input type="password" ng-model="auth.password" aria-describedby="sizing-addon1" class="form-control">
+  </div>
+
+  <button type="button" ng-click="auth.signIn()" class="btn btn-default">Sign In</button>
+
+  <p ng-if="auth.error">
+    Error: <strong>{{ auth.error }}</strong>
+  </p>
+</section> -->

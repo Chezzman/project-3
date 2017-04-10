@@ -34,3 +34,7 @@ body {
   background: url(/images/Twitter-icon.png) center no-repeat ;
   background-size: contain;
 }
+
+strong{
+  color: red;
+}
