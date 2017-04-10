@@ -1,5 +1,4 @@
 var Twitter = require('twitter');
-// var Tweet = require('../models/tweet.model.js');
 
 //Docs of using twitter npm
 //https://github.com/desmondmorris/node-twitter/tree/master/examples
@@ -11,19 +10,14 @@ var client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-
-//how to perform Twitter API search in Node.js with user-entered keyword
-//http://stackoverflow.com/questions/34343660/how-to-perform-twitter-api-search-in-node-js-with-user-entered-keyword
-
-
 //SEARCH FOR PERSON OR HASH TAG
 //https://dev.twitter.com/rest/public/search
 //https://dev.twitter.com/rest/reference/get/search/tweets
 function showAllTweets(req, res){
   var params = {
     q: req.body.query,
-    count: 10,
-    //geocode: true
+    count: 10
+  
   };
   client.get('search/tweets', params, function(error, tweets, response) {
     if(error){

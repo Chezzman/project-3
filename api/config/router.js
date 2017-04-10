@@ -4,13 +4,7 @@ var router = express.Router();
 var tweetController = require('../controllers/tweet.controller');
 
 router.post('/api/twittersearchresults', tweetController.getTweets);
-//   .post(userController.createUser);
-//
-// router.route('/user/:id')
-//   .get(userController.getUser)
-//   .patch(userController.updateUser)
-//   .delete(userController.removeUser);
-//router.get('/api/tweets/search', tweetController.search);
+
 module.exports = router;
 
 
