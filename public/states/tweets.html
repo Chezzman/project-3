@@ -32,7 +32,7 @@
         </div>
         <p>{{ tweet.text }}</p>
 
-
+        <input type="hidden" name="id" value="{{ tweet.id_str }}">
         <input type="hidden" name="gps" value="{{ tweet.coordinates }}">
         <input type="hidden" name="place" value="{{ tweet.place }}">
         <input type="hidden" name="locations" value="{{ tweet.user.locations }}">
