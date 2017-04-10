@@ -37,23 +37,24 @@
         <div ng-if="auth.user">
           <div class="panel panel-default welcome-banner">
             <div class="panel-body">
-              <p>Welcome back {{ auth.user.email }}, happy searching!  </p>
+              <p>Welcome back {{ auth.user.email }}!  </p>
             </div>
           </div>
           <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified top-padding" role="toolbar">
-            <li>
+            <li class="col-sm-6">
                <a href="#" ng-click="auth.signOut()" role="group">Sign Out</a>
              </li>
-            <li>
+            <li class="col-sm-6">
               <a href="#" ui-sref="tweet" role="group">Where Tweet</a>
             </li>
+
           </nav>
         </div>
 
         <div ng-if="!auth.user">
           <div class="panel panel-default welcome-banner">
             <div class="panel-body">
-              <p>Welcome to WhereTweet,  search twitter and find out locations!</p>
+              <p>Welcome to WhereTweet!</p>
             </div>
           </div>
           <nav class="row col-md-6 btn-toolbar nav nav-tabs nav-justified top-padding">
@@ -63,13 +64,18 @@
             <li>
               <a href="#" ui-sref="signup" >Sign up</a>
             </li>
+
           </nav>
         </div>
 
       </section>
     <div class="col-sm-12 inline-block">
       <h1 class="banner col-md-12">WhereTweets</h1>
-      <div class="twitter_logo"></div>
+      <div class="twitter_logo">
+        <a href="https://twitter.com/"> </a>
+      </div>
+
+
     </div>
 
     <section ui-view>
@@ -81,5 +87,10 @@
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE&sensor=false"></script> -->
 
     </div>
+    <script>
+  $(document).ready(function(){
+    $('.panel-body').hide().delay(3000).fadeIn(3000)
+  });
+</script>
   </body>
 </html>
