@@ -2,7 +2,6 @@ body {
   width:100vw;
   height: 100vh;
   display: inline-flex;
-  border: 1px solid purple;
   justify-content: center;
   align-content: center;
   font-family: sans-serif;
@@ -12,13 +11,13 @@ body {
 .page_wrapper{
   width:80%;
   min-height: 80% auto;
-  border: 1px solid purple;
+  border: 3px solid purple;
   padding:2%;
   margin:auto;
 }
 
 button{
-  
+
 }
 .tweets{
   background-color: white;
