@@ -37,9 +37,7 @@ function AuthCatcher($rootScope, $state) {
 }
 
 angular
-  .module('WhereTweet', ['ui.router', 'firebase'])
+  .module('WhereTweet', ['ui.router', 'firebase', 'uiGmapgoogle-maps'])
   .config(MainRouter)
   .constant('API_URL', 'http://localhost:3000')
   .run(AuthCatcher);
-
-//'uiGmapgoogle-maps'
