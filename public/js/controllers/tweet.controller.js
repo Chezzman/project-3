@@ -11,11 +11,12 @@ function TweetController(TweetFactory) {
               latitude: tweet.place.bounding_box.coordinates[0][0][1],
               longitude: tweet.place.bounding_box.coordinates[0][0][0]
             },
+
             id: i
           };
         });
-        console.log('twitter response: ', response.data);
-        console.log(controller.markers);
+        
+
       },
       function error(error) {
         console.warn('Error getting tweets:', error);
@@ -28,7 +29,7 @@ function TweetController(TweetFactory) {
   };
 
   function init(){
-    controller.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    controller.map = { center: { latitude: 45.0792, longitude: 23.8859 }, zoom: 2 };
     controller.markers = [];
     controller.tweetSearch = '';
     controller.allTweets = [];
