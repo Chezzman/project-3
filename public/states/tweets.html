@@ -31,10 +31,10 @@
           <p>{{ tweet.created_at }}</p>
         </div>
         <p>{{ tweet.text }}</p>
-  
+
 
         <input type="hidden" name="id" value="{{ tweet.id_str }}">
-        <input type="hidden" name="gps" value="{{ tweet.coordinates }}">
+        <input type="hidden" name="gps" value="{{ tweet.bounding_box.coordinates }}">
         <input type="hidden" name="place" value="{{ tweet.place }}">
         <input type="hidden" name="locations" value="{{ tweet.user.locations }}">
 
@@ -43,13 +43,14 @@
   </div>
 </form>
 
-<!--
-<h2>MAPS</h2>
-<div ng-controller="MapsController as maps" ng-init="maps.setMapMarkerLocation()">
+
+ <h2>MAPS</h2>
+<section ng-controller="MapsController as maps">
   <ui-gmap-google-map center="maps.map.center" zoom="maps.map.zoom">
-	  <ui-gmap-marker coords="maps.marker.coords" options="maps.marker.options" ></ui-gmap-marker>
-	</ui-gmap-google-map>
-</div> -->
+    <ui-gmap-marker ng-repeat="tweetMarker in tweets.allTweets.statuses" coords="tweetMarker.bounding_box.coordinates" idkey="tweetMarker.id"></ui-gmap-marker>
+  </ui-gmap-google-map>
+</section>
+
 <script type="text/javascript">
 $(document).ready(function() {
 

@@ -36,8 +36,16 @@ function AuthCatcher($rootScope, $state) {
   });
 }
 
+function aGM(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyBBhh8JGDICwolgjstUcPjcIgr1PKoA6QE',
+    v: '3.4.1', 
+    libraries: 'weather,geometry,visualization'
+  });
+}
+
 angular
   .module('WhereTweet', ['ui.router', 'firebase', 'uiGmapgoogle-maps'])
-  .config(MainRouter)
+  .config(MainRouter, aGM)
   .constant('API_URL', 'http://localhost:3000')
   .run(AuthCatcher);
