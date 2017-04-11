@@ -90,10 +90,7 @@ strong{
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: #1DA1F2;
-  animation-name: flyby;
-  animation-duration: 7s;
-  animation-delay: 2s;
-  animation-timing-function: ease-in-out;
+  animation: flyby 7s ease-in-out 2s forwards;
 
 }
 @keyframes flyby{
@@ -106,11 +103,9 @@ strong{
        opacity: 0.8;
      }
     100% {
-      display:none;
       opacity: 0;
-      background-color: #ffffff;
-      color: #ffffff;
-      visibility: hidden;
+
+
     }
 }
 .banner {
