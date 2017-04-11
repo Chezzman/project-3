@@ -13,7 +13,12 @@ function TweetController(TweetFactory) {
     );
   };
 
+  controller.getTweetsLocation = function(){
+
+  };
+
   function init(){
+    controller.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     controller.tweetSearch = '';
     controller.allTweets = [];
   }

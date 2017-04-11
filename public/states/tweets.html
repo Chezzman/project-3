@@ -1,7 +1,9 @@
+<section ng-controller="TweetController as tweets">
 <h2>Recent Twitter Tweets</h2>
 
 
-<form ng-controller="TweetController as tweets">
+
+<form>
   <div class="input-group">
     <input type="text" ng-model="tweets.tweetSearch" class="form-control">
     <div class="input-group-btn">
@@ -45,11 +47,11 @@
 
 
  <h2>MAPS</h2>
-<section ng-controller="MapsController as maps">
-  <ui-gmap-google-map center="maps.map.center" zoom="maps.map.zoom">
+
+  <ui-gmap-google-map center="tweets.map.center" zoom="tweets.map.zoom">
     <ui-gmap-marker ng-repeat="tweetMarker in tweets.allTweets.statuses" coords="tweetMarker.bounding_box.coordinates" idkey="tweetMarker.id"></ui-gmap-marker>
   </ui-gmap-google-map>
-</section>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -63,3 +65,4 @@ $(document).ready(function() {
 });
 
 </script>
+</section>
