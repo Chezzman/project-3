@@ -47,22 +47,11 @@
 
 
  <h2>MAPS</h2>
-
-  <ui-gmap-google-map center="tweets.map.center" zoom="tweets.map.zoom">
-    <ui-gmap-marker ng-repeat="tweetMarker in tweets.allTweets.statuses" coords="tweetMarker.bounding_box.coordinates" idkey="tweetMarker.id"></ui-gmap-marker>
+  {{ tweets.markers}}
+  <ui-gmap-google-map ng-if="tweets.markers.length > 0" center="tweets.map.center" zoom="tweets.map.zoom">
+    <ui-gmap-marker ng-repeat="tweetMarker in tweets.markers" coords="tweetMarker.location" idkey="tweetMarker.id"></ui-gmap-marker>
   </ui-gmap-google-map>
 
 
-<script type="text/javascript">
-$(document).ready(function() {
 
-
-//BS Popover promt_________________________
-  $(function () {
-    $('[data-toggle="popover"]').popover();
-  });
-
-});
-
-</script>
 </section>
