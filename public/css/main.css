@@ -79,6 +79,7 @@ strong{
 }
 
 .welcome-banner{
+  color: #fff;
   position: fixed;
   top: 0;
   font-size: 18px;
@@ -114,4 +115,10 @@ strong{
 }
 .banner {
       background-color: #1DA1F2;
+}
+
+.input-group-addon{
+background-color: #1DA1F2;
+color: #fff;
+
 }
