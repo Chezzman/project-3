@@ -1,10 +1,8 @@
 <section ng-controller="TweetController as tweets">
 
-<h2>Recent Twitter Tweets</h2>
-
 <form>
   <div class="input-group">
-    <input type="text" ng-model="tweets.tweetSearch" class="form-control">
+    <input type="text" ng-model="tweets.tweetSearch" class="form-control" placeholder="Search twitter here">
     <div class="input-group-btn">
       <button type="button"
               id="popup"
@@ -13,7 +11,7 @@
               data-toggle="popover"
               data-placement="top"
               title="Twitter Search"
-              data-content="Search Twitters database for recent tweets" >
+              data-content="Search Twitters database for recent tweets, remember not all tweets have a geolocating tag on them so they will not appear on the map!" >
               <i class="glyphicon glyphicon-question-sign"></i></button>
       <button type="button" class="btn btn-default" ng-click="tweets.getTweets()">Search<i class="glyphicon glyphicon-search"></i></button>
 
@@ -32,7 +30,7 @@
           <p>{{ tweet.created_at }}</p>
         </div>
         <p>{{ tweet.text }}</p>
-      
+
 
 
         <input type="hidden" name="id" value="{{ tweet.id_str }}">
@@ -55,3 +53,16 @@
 
 
 </section>
+<!-- NEED TO BE DONE IN ANGULAR -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+
+  //BS Popover promt_________________________
+    $(function () {
+      $('[data-toggle="popover"]').popover();
+    });
+
+  });
+
+  </script>

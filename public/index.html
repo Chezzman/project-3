@@ -47,7 +47,7 @@
         <div ng-if="auth.user">
           <div class="panel panel-default welcome-banner">
             <div class="panel-body">
-              <p>Welcome back {{ auth.user.email }}!  </p>
+              <p>Welcome {{ auth.user.email }}!  </p>
             </div>
           </div>
           <nav class="row col-md-8 btn-toolbar nav nav-tabs nav-justified top-padding" role="toolbar">
@@ -80,7 +80,7 @@
 
       </section>
     <div class="col-sm-12 inline-block">
-      <h1 class="banner col-md-12">WhereTweets</h1>
+      <h1 class="banner col-md-12">Where-Tweets</h1>
       <div class="twitter_logo">
         <a href="https://twitter.com/"> </a>
       </div>
@@ -98,18 +98,6 @@
     </div>
 
 
-  <!-- NEED TO BE DONE IN ANGULAR -->
-    <script type="text/javascript">
-    $(document).ready(function() {
 
-
-    //BS Popover promt_________________________
-      $(function () {
-        $('[data-toggle="popover"]').popover();
-      });
-
-    });
-
-    </script>
   </body>
 </html>
