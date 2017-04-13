@@ -46,7 +46,7 @@
 
  <h2 ng-if="tweets.markers.length > 0">MAPS</h2>
 
-  <ui-gmap-google-map ng-if="tweets.markers.length > 0" center="tweets.map.center" zoom="tweets.map.zoom">
+  <ui-gmap-google-map ng-if="tweets.markers.length > 0" center="tweets.map.center" zoom="tweets.map.zoom" options="tweets.map.options" >
     <ui-gmap-marker ng-repeat="tweetMarker in tweets.markers" coords="tweetMarker.location" idkey="tweetMarker.id"></ui-gmap-marker>
   </ui-gmap-google-map>
 
