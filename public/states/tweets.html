@@ -25,7 +25,7 @@
     <ul class="row container-fluid">
       <li class="col-sm-5 tweets" ng-repeat="tweet in tweets.allTweets.statuses">
         <div class="row">
-          <img src="{{ tweet.user.profile_image_url }}" alt="Profile pic" class="inline-block">
+          <img ng-if="!tweet.user.profile_image_url" src="{{ tweet.user.profile_image_url }}" alt="Profile pic" class="inline-block">
           <p class="inline-block">{{ tweet.user.name }}</p>
           <p>{{ tweet.created_at }}</p>
         </div>
